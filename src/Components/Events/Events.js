@@ -35,6 +35,9 @@ class NoCopy extends Component {
    }
 
 
+
+   
+   /* fonction qui ajoute 1 a chaque click sur le bouton */
    addOneShot = () => {
     this.setState((state)=> {
         return {shots: state.shots + 1}

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-
+import Tests from '../Test/Tests';
 import ComponentClass from '../StateAndProps/ComponentClass';
 import Events from '../Events/Events';
+import ChangeState from '../StateAndProps/ChangeState';
+// import Array from '../StateAndProps/Array';
 
 class App extends Component {
 
@@ -25,6 +27,17 @@ class App extends Component {
 
 
         <Events />
+
+
+        <ChangeState />
+
+
+        {/* <Array/> */}
+
+
+
+
+        <Tests test="propstest"/>
 
       </div>
     );
