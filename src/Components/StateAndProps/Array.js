@@ -10,7 +10,9 @@ class Array extends Component {
                 {firstname: "Damien", lastname: "onolfo", age:"29"},
                 {firstname: "Alison", lastname: "tricot", age:"27"},
                 {firstname: "Olivier", lastname: "Legrand", age:"37"},
-                {firstname: "Nicolas", lastname: "onolfo", age:"42"}]
+                {firstname: "Nicolas", lastname: "onolfo", age:"42"},
+                {lastname:"sans prenom", age:"inconnue"},
+                {firstname:"Simon", lastname:"Pumba"}]
         }
     }
     
@@ -20,9 +22,17 @@ class Array extends Component {
         return (
             <div>
 
+                
                 {this.state.tableau.map((infos, index) => {
-                    <Agenda firstname={infos.firstname}/>
+                    return (
+                        <div key={index}>
+
+                            {/* on passe les props dans le composant agenda via la methode map*/}
+                            <Agenda firstname={infos.firstname} lastname={infos.lastname} age={infos.age}/>
+                            </div>
+                    )
                 }) }
+
             </div>
         );
     }
