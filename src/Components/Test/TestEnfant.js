@@ -11,8 +11,12 @@ class TestEnfant extends Component {
             { name: 'peugeot', color: 'green', year: '2018' } //tableau voitures
         ],
         titre: 'mon catalogue voitures 2'
+
+        
     }
 
+   
+    
 
     /* fonction qui ajoute 10 ans a chaque click */
     addTenYears = () => {
@@ -31,11 +35,13 @@ class TestEnfant extends Component {
 
     render() {
 
+
 /* genere l'année actuelle, seulement l'année */ 
         const year = new Date().getFullYear();
 
-
         return (
+
+            
             <div>
                 <h1> {this.props.essaie} </h1>
                 <h1> {this.props.second} </h1>
@@ -63,8 +69,15 @@ class TestEnfant extends Component {
                         )
 
                     })
+
                 }
+
+
+
+
             </div>
+
+
         );
     }
 }

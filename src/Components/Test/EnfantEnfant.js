@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 /* on recupere les props passé dans le fichier testEnfant.js au compososant EnfantEnfant */

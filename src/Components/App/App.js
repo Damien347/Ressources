@@ -8,6 +8,9 @@ import Events from '../Events/Events';
 import ChangeState from '../StateAndProps/ChangeState';
 import Array from '../StateAndProps/Array';
 import Parent from '../PropsFunction/Parent';
+import FragmentMethode from '../Fragment/FragmentMethode';
+import Display from '../Destructuring/Display';
+import Form from '../Form/Form';
 
 class App extends Component {
 
@@ -35,7 +38,7 @@ class App extends Component {
         <hr />
 
 
-        <Array/>
+        <Array />
         <hr />
 
 
@@ -43,7 +46,17 @@ class App extends Component {
         <Parent />
         <hr />
 
-        
+
+
+        <FragmentMethode />
+        <hr />
+
+        <Display />
+        <hr />
+
+
+        <Form />
+        <hr />
 
         <Tests test="propstest" />
 
