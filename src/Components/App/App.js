@@ -11,6 +11,8 @@ import Parent from '../PropsFunction/Parent';
 import FragmentMethode from '../Fragment/FragmentMethode';
 import Display from '../Destructuring/Display';
 import Form from '../Form/Form';
+import StyledComponents from '../Styles/StylesComponents';
+import Montage from '../LifeCycle/Montage/LifeCycle';
 
 class App extends Component {
 
@@ -57,6 +59,19 @@ class App extends Component {
 
         <Form />
         <hr />
+
+
+
+        <StyledComponents />
+        <hr />
+
+
+
+        <Montage name="phase Montage terminé "/>
+        <hr />
+
+
+
 
         <Tests test="propstest" />
 

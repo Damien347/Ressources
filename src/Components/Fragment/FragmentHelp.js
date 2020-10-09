@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 /*on recupere les props ici, que l'on met dans un const contact.*/
 const FragmentHelp = ({firstname, lastname, age}) => {
 
     /* on met une condition si l'age est renseigné ou non, on affiche l'age ou age non renseigné
     les backtips `` remplace les balises <p> pour ne pas qu'elle soit visible dans le tableau dans les td*/
-    const contactInfos = age ? (`Age: ${age} `)
+    const contactInfos = age ? (`Age: ${age}`)
         :
         (`Age: non renseigné`);
 
@@ -22,7 +22,7 @@ const FragmentHelp = ({firstname, lastname, age}) => {
             )
         }else { /* sinon tu retourne fiche imcomplete si firstname n'existe pas */
             return (
-                <p> Fiche imcompléte </p>
+                <Fragment> Fiche imcompléte </Fragment>
             )
         }
 }

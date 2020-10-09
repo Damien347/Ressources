@@ -6,7 +6,8 @@ class Form extends Component {
     state = {
         username: '',
         color:'',
-        colors: ["", "red", "blue", "green", "black", "pink"]
+        colors: ["", "red", "blue", "green", "black", "pink"],
+        comment: ""
     }
 
     handlePseudo = (e) => {
@@ -24,14 +25,28 @@ class Form extends Component {
     }
 
 
+    handleComment = (e)=> {
+        this.setState({
+            comment: e.target.value
+        })
+    }
+
+
+    handleSubmitForm = (e)=> {
+        e.preventDefault();
+        console.log(`Username: ${this.state.username} Couleur: ${this.state.color} commentaires: ${this.state.comment}`)
+    }
+
+
     render() {
         return (
             <div>
                 {/* on passe les props color et height au composant Car 
                 pour modifier le svg */}
-                <Car color="red" height="400" />
+                <Car color={this.state.color} height="400" />
                 <h1> Commentaires </h1>
-                <form>
+                <textarea value={this.state.comment} onChange={this.handleComment}></textarea>
+                <form onSubmit={this.handleSubmitForm}>
 
                     <div>
                         <label> Pseudo</label>
@@ -47,6 +62,8 @@ class Form extends Component {
                             }) }
                         </select>
                     </div>
+
+                    <button> Valider </button>
 
                 </form>
             </div>

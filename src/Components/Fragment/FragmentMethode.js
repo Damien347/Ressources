@@ -24,23 +24,26 @@ class FragmentMethode extends Component {
             <Fragment>
 
                 <table>
-                    <tb>
-                        <th> firstname: </th>
-                        <th> lastname: </th>
-                        <th> age: </th>
-                    </tb>
-                    {this.state.tableau.map((infos, index) => {
-                        return (
+                    <thead>
+                        <tr>
+                            <th> firstname: </th>
+                            <th> lastname: </th>
+                            <th> age: </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.tableau.map((infos, index) => {
+                            return (
 
-                            /* Fragment remplace ici <div></div> pour ne pas poser de probleme dans le tableau */
-                            <Fragment key={index}>
+                                /* Fragment remplace ici <div></div> pour ne pas poser de probleme dans le tableau */
+                                <Fragment key={index}>
 
-                                {/* on passe les props dans le composant agenda via la methode map*/}
-                                <FragmentHelp firstname={infos.firstname} lastname={infos.lastname} age={infos.age} />
-                            </Fragment>
-                        )
-                    })}
-
+                                    {/* on passe les props dans le composant agenda via la methode map*/}
+                                    <FragmentHelp firstname={infos.firstname}lastname={infos.lastname}age={infos.age}/>
+                                </Fragment>
+                            )
+                        })}
+                    </tbody>
 
                 </table>
             </Fragment>
