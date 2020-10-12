@@ -13,6 +13,9 @@ import Display from '../Destructuring/Display';
 import Form from '../Form/Form';
 import StyledComponents from '../Styles/StylesComponents';
 import Montage from '../LifeCycle/Montage/LifeCycle';
+import ParentComponent from '../PureComponents/ParentComponent';
+import Modal from '../Portail/Modal';
+import Refs from '../Refs/Refs';
 
 class App extends Component {
 
@@ -67,11 +70,23 @@ class App extends Component {
 
 
 
-        <Montage name="phase Montage terminé "/>
+        <Montage name="phase Montage terminé " />
         <hr />
 
 
 
+        <ParentComponent />
+        <hr />
+
+
+
+        <Modal />
+        <hr />
+
+
+
+        <Refs />
+        <hr />
 
         <Tests test="propstest" />
 
