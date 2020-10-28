@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import ErrorBoundary from '../Error/ErrorBoundary';
+
 
 import Tests from '../Test/Tests';
 import ComponentClass from '../StateAndProps/ComponentClass';
@@ -16,6 +18,9 @@ import Montage from '../LifeCycle/Montage/LifeCycle';
 import ParentComponent from '../PureComponents/ParentComponent';
 import Modal from '../Portail/Modal';
 import Refs from '../Refs/Refs';
+import Apex from '../Higher-Order/Apex';
+import TestError from '../Error/TestError';
+import Combat from '../RenderProps/Combat';
 
 class App extends Component {
 
@@ -87,6 +92,18 @@ class App extends Component {
 
         <Refs />
         <hr />
+
+
+<Combat />
+
+
+        <ErrorBoundary> <TestError /> </ErrorBoundary>
+          
+        
+
+
+
+        <Apex />
 
         <Tests test="propstest" />
 
