@@ -22,18 +22,47 @@ import Apex from '../Higher-Order/Apex';
 import TestError from '../Error/TestError';
 import Combat from '../RenderProps/Combat';
 
+
+import Menu from '../Menu/Menu';
+import Gallery from '../Menu/Gallery';
+import FAQ from '../Menu/FAQ';
+import Home from '../Menu/Home';
+import Construct from '../Menu/Construct';
+import ErrorPage from '../Menu/ErrorPage';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+
 class App extends Component {
 
 
   /* je definis un state */
   state = {
-    titre: "Catalogue"
+    titre: "Catalogue",
   }
 
   render() {
     return (
 
       <div className="App" >
+
+
+
+
+        <BrowserRouter >
+          <Menu />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/Gallery" component={Gallery} />
+            <Route path="/Faq" component={FAQ} />
+            <Route path="/Construct" component={Construct} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </BrowserRouter>
+
+
+
+
+
+
 
         {/*j'accede au state via un props que je nomme titre */}
         <ComponentClass titre={this.state.titre} />
@@ -89,17 +118,17 @@ class App extends Component {
         <hr />
 
 
-
+        {/* 
         <Refs />
-        <hr />
+        <hr /> */}
 
 
-<Combat />
+        <Combat />
 
 
         <ErrorBoundary> <TestError /> </ErrorBoundary>
-          
-        
+
+
 
 
 
