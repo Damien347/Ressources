@@ -12,7 +12,7 @@ class ComponentClass extends Component {
         console.log (this);
         return (
             <div>
-                <h1> {this.props.titre} </h1>
+                <h2> {this.props.titre} </h2>
 
                 {/* on injecte les props comme parametres (race nom age couleur ) 
                 aux différents composants (ComponentFunction). Le props age est inconnu

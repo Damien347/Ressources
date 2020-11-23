@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
+/* gestion des erreurs */
 import ErrorBoundary from '../Error/ErrorBoundary';
 
 
+/* Import Components */
 import Tests from '../Test/Tests';
 import ComponentClass from '../StateAndProps/ComponentClass';
 import Events from '../Events/Events';
@@ -21,13 +23,16 @@ import Refs from '../Refs/Refs';
 import Apex from '../Higher-Order/Apex';
 import TestError from '../Error/TestError';
 import Combat from '../RenderProps/Combat';
+import Arbre from '../MyContext/Arbre';
 
 
+/* import Components for Menu (react router dom) */
 import Menu from '../Menu/Menu';
 import Gallery from '../Menu/Gallery';
 import FAQ from '../Menu/FAQ';
 import Home from '../Menu/Home';
 import Construct from '../Menu/Construct';
+import Profile from '../Menu/Profile';
 import ErrorPage from '../Menu/ErrorPage';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
@@ -47,21 +52,21 @@ class App extends Component {
 
 
 
-        <BrowserRouter >
-          <Menu />
-          <Switch>
-            <Route exact path="/" component={Home} />
+        <BrowserRouter > {/* Doit contenir tout le code, la div parent peut etre remplacé par browserRouter dans le cas ou rien ne se trouve en dehors */}
+          <Menu /> {/* Ce composant contient le Menu auquel on fera les liens via Link to */}
+          <Switch> {/* Switch permet de ne pas recharger la page, toutes les routes doivent s'y trouver dedans */}
+            <Route exact path="/" component={Home} /> {/* Exact permet d'afficher le composant home que dans home et pas dans chaque composants */}
             <Route path="/Gallery" component={Gallery} />
             <Route path="/Faq" component={FAQ} />
-            <Route path="/Construct" component={Construct} />
-            <Route component={ErrorPage} />
+            <Route path="/Construct" component={Construct} />{/*Page en construction, travail de la redirection auto */}
+
+            <Route path="/users/:profileId" component={Profile} />
+            <Route component={ErrorPage} /> {/* quand une url est entré, chaque path va etre etudier, si le premier ne correspond pas, elle passe au suivant, et ainsi dessuite jusqu'a arriver a errorPage */}
           </Switch>
         </BrowserRouter>
 
 
-
-
-
+        <Arbre />
 
 
         {/*j'accede au state via un props que je nomme titre */}
@@ -126,6 +131,7 @@ class App extends Component {
         <Combat />
 
 
+{/* Une erreur est creer dans testError, grace a errorboundary l'erreur n'est que local, le site n'est pas cassé completement */}
         <ErrorBoundary> <TestError /> </ErrorBoundary>
 
 
@@ -133,6 +139,7 @@ class App extends Component {
 
 
         <Apex />
+     
 
         <Tests test="propstest" />
 

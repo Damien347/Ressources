@@ -4,6 +4,7 @@ class SingersClass extends Component {
 
     render() {
 
+        // destructuring //
         const {name, age} = this.props;
 
         return (

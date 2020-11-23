@@ -7,6 +7,8 @@ class Display extends Component {
     render() {
         return (
             <div>
+
+                <h1> Destructuring </h1>
                 <Singers name="Alison Tricot" age="27" />
                 <Singers name="Damien Onolfo" age="29"/>
                 <Singers name="Laurie Darmon" age="32"/>

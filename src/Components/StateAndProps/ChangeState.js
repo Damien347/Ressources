@@ -65,7 +65,7 @@ class ChangeState extends Component {
     render() {
         return (
             <div>
-                <h1>{this.state.titre}</h1>
+                <h2>{this.state.titre}</h2>
                 <button onClick={this.changeTitre}> via setState </button>
                 <button onClick={() => this.changeViaParam('titre changer via param')}> via param </button>
                 <button onClick={this.changeViaBind.bind(this, 'titre changer via bind')}> via bind </button>

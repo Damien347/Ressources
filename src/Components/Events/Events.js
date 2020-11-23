@@ -21,7 +21,7 @@ class NoCopy extends Component {
 
 
 
-    /* fonction qui change le style quand on passe par dessus le titre h1 */
+    /* fonction qui change le style quand on passe par dessus le titre h2 mouse over me*/
     mouseChangeUpercaseRed = (e) => {
 
 
@@ -48,12 +48,14 @@ class NoCopy extends Component {
     render() {
         return (
             <div>
+                <h1> Events </h1>
+                {/*A l'evenement oncopy, la methode noCopy se charge, ce qui affiche une alerte pour inciter a ne pas copié */}
                 <p onCopy={this.noCopy}> Ce texte affiche une alerte pour indiquer
                  a l'utilisateur de ne pas copier le texte, le texte n'est pas protéger en soi </p>
 
                 {/* on applique la fonction mouseChangeUppercaseRed grace au 
                     onMouseOver qui declanche le changement de style*/}
-                <h1 onMouseOver={this.mouseChangeUpercaseRed}> Mouse over me </h1>
+                <h2 onMouseOver={this.mouseChangeUpercaseRed}> Mouse over me </h2>
 
                <button onClick={this.addOneShot}> {this.state.clickHere} </button>
             <p> {this.state.shots} </p>
